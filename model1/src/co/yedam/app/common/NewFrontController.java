@@ -18,7 +18,7 @@ import co.yedam.app.board.BoardCommandSelectList;
 /**
  * Servlet implementation class NewFrontController
  */
-@WebServlet("/") // 모든 로 끝나는 url요청
+@WebServlet("*.do") // 모든 로 끝나는 url요청
 public class NewFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	HashMap<String, Command> cont = new HashMap<String, Command>();
