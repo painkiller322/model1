@@ -14,9 +14,16 @@
 	}
 	function funcAdd(){
 		//배열에 추가하고 배열을 div에 출력
+		let inputArr = document.getElementsByTagName("input");
+		for (i=0; i<inputArr.length; i++){
+			txtArr.push(inputArr[i].value);
+		}
+		document.getElementById("result").innerHTML = txtArr.join(", "); 
 	}
 	function funcDelete(){
 		//배열에서 삭제하고 배열을 div에 출력(js-array method의 delete 활용)
+		delete txtArr.value;
+		document.getElementById("result").innerHTML = txtArr.join(", "); 
 	}	
 	function funcSearch(){
 		//배열에서 검색해서 검색위치를 div출력

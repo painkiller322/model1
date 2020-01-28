@@ -43,6 +43,7 @@ for(i=0;i<txtArr.length;i++){
 	}
 //5.성적은 소수점 2자리까지만 입력하였는지 정규표준식으로 체크하고 아니라면 둘째자리까지만 변경하여 div에 출력(넘버,메소드,스트링 활용)
 //6.비고란의  \n(엔터키) 를 <br>태그로 변환하여 출력 (replace함수 활용), 브라우저-F12-콘솔에서 'result.innerHTML = mbBigo.value'입력하여 확인하기
+	mbBigo.value.replace("\n", "<br>");
 }
 //2.의 이메일 체크 정규식
 function isEmail(asValue) {
