@@ -31,6 +31,17 @@ for(i=0;i<txtArr.length;i++){
 	result.innerHTML += "<br> 이메일 체크 : " + isEmail(mbEmail.value);
 //3.등록일자는 날짜 형식이 맞는지 체크하고 년도는 2015~2019년도 사이인지 체크하여 결과 출력
 	result.innerHTML += "<br> 날짜형식체크: " + isDatetime(mbDate.value);
+	//split으로 나눠서 if로 검색
+	var Vdate = mbDate.value;
+	console.log(mbDate.value)
+	var dSplit = VDate.split("-");
+	console.log(dSplit)
+	var	ddate = new Date(dSplit[0], dSplit[1]-1, dSplit[2]);
+	if (ddate[0]>2015 && ddate[0]<2019){
+		result.innerHTML += "<br> 15~19년 사이";
+	}else{
+		result.innerHTML += "<br> 15~19년 외";
+	}
 	//if(mbDate.value.substr(2,2)<19 && mbDate.value.substr(2,2)>15){
 	//	result.innerHTML = "<br> 15~19년 사이 ";
 	//}

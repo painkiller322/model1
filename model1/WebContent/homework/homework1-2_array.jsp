@@ -27,6 +27,7 @@
 	}	
 	function funcSearch(){
 		//배열에서 검색해서 검색위치를 div출력
+		
 	}		
 </script>
 </head>
