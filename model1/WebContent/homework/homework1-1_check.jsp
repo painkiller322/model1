@@ -31,8 +31,15 @@ for(i=0;i<txtArr.length;i++){
 	result.innerHTML += "<br> 이메일 체크 : " + isEmail(mbEmail.value);
 //3.등록일자는 날짜 형식이 맞는지 체크하고 년도는 2015~2019년도 사이인지 체크하여 결과 출력
 	result.innerHTML += "<br> 날짜형식체크: " + isDatetime(mbDate.value);
+	
+	var pattern = /[0-9]{4}-[0-9]{2}-[0-9]{2}/;
+	if(pattern.test(mbDate.value)) {
+		result.innerHTML += "<br> 날짜형식 체크 : " + true;
+	} else {
+		result.innerHTML += "<br> 날짜형식 체크 : " + false;
+	}
 	//split으로 나눠서 if로 검색
-	var Vdate = mbDate.value;
+/* 	var Vdate = mbDate.value;
 	console.log(mbDate.value)
 	var dSplit = VDate.split("-");
 	console.log(dSplit)
@@ -42,19 +49,24 @@ for(i=0;i<txtArr.length;i++){
 	}else{
 		result.innerHTML += "<br> 15~19년 외";
 	}
-	//if(mbDate.value.substr(2,2)<19 && mbDate.value.substr(2,2)>15){
+*/	
+ 	//if(mbDate.value.substr(2,2)<19 && mbDate.value.substr(2,2)>15){
 	//	result.innerHTML = "<br> 15~19년 사이 ";
 	//}
 //4.홈페이지는 (앞글자가)http로 시작하는지 체크하여 결과 출력 T/F 결과 출력
 	if(mbHomepage.value.substr(0,4) == "http") {
-		result.innerHTML += "<br> 홈페이지가 http로 시작하는지: true";
+		result.innerHTML += "<br> 홈페이지가 http로 시작하는지: " + true;
 	}
 	else {
-		result.innerHTML += "<br> 홈페이지가 http로 시작하는지: false";
+		result.innerHTML += "<br> 홈페이지가 http로 시작하는지: " + false;
 	}
 //5.성적은 소수점 2자리까지만 입력하였는지 정규표준식으로 체크하고 아니라면 둘째자리까지만 변경하여 div에 출력(넘버,메소드,스트링 활용)
 //6.비고란의  \n(엔터키) 를 <br>태그로 변환하여 출력 (replace함수 활용), 브라우저-F12-콘솔에서 'result.innerHTML = mbBigo.value'입력하여 확인하기
-	mbBigo.value.replace("\n", "<br>");
+/* 	function replace(str){
+		str = mbBigo.value.replace(/\n/g,"<br />");
+	return str;	
+	} */
+	
 }
 //2.의 이메일 체크 정규식
 function isEmail(asValue) {
