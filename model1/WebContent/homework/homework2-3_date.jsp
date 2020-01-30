@@ -5,6 +5,9 @@
 <head><title>homework3_date.jsp</title>
 <script>
 	window.addEventListener("load",function(){
+		function btnclick(){
+			
+		}
 		//버튼 클릭 이벤트 지정
 		//입력날짜와 오늘 날짜까지의 일수 계산하여 div에 출력 "남은 일수는 00일입니다."
 		//반올름해서 출력 할 것

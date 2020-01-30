@@ -16,7 +16,7 @@ td {
 </style>
 <script>
 	window.addEventListener("load", function() {
-		//tr 태그에 더블클릭 이벤트 지정 . 선택한 행을 오른쪽으로 이동. 더블클릭으로 추가된 후에 이동한 거에 이벤트를 걸어야 한다.
+/*		//tr 태그에 더블클릭 이벤트 지정 . 선택한 행을 오른쪽으로 이동. 더블클릭으로 추가된 후에 이동한 거에 이벤트를 걸어야 한다.
 		var trs = document.querySelectorAll("#tbl1 tr");
 		var tblBody = document.querySelectorAll("#tbl2 tbody");//tbody는 꼭 적어야됨(안써도 자동구성됨)
 		for(i=0; i<trs.length; i++) {
@@ -26,6 +26,20 @@ td {
 				tblBody[0].removeEventListener
 			})
 		}
+*/
+	//왼쪽 테이블 클릭 이벤트
+	tbl1.addEventListener("dblclick", function(e){
+		var src = e.target.parentNode;
+		console.log(e.target.parentNode)
+		if(src.tagName =="TR"){
+			console.log(src)
+			var trs = document.querySelectorAll("#tbl1 tr");
+			var tblBody = document.querySelectorAll("#tbl2 tbody");
+			tblBody.appendChild(tbl);
+			tblBody.removeEventListener
+		}
+	})
+
 	})
 </script>
 </head>
