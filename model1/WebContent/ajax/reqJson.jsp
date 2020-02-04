@@ -23,7 +23,7 @@
 				txtName.value = obj.name;
 			}
 		};
-		xhttp.open("GET", "../GetJSON.do?", true);
+		xhttp.open("GET", "../GetJSON.do?", true);//(방식, url, async)
 		xhttp.send();
 	}
 </script>

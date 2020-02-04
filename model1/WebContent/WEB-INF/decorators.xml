@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/template">
+    <decorator name="basic-theme" page="layout.jsp">
+        <pattern>*.do</pattern>
+        <!-- 주소이름을 설정하는것으로 권한구분가능 ex) "admin/*.do" 혹은 "user/*.do" -->
+    </decorator>
+</decorators>

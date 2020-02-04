@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.app.board.BoardCommandCreateForm;
 import co.yedam.app.board.BoardCommandSelectList;
+import co.yedam.app.boardAjax.AjaxBoardList;
+import co.yedam.app.boardAjax.AjaxBoardOne;
 
 /**
  * Servlet implementation class NewFrontController
@@ -41,14 +43,17 @@ public class NewFrontController extends HttpServlet {
 		// board
 		// 등록
 		// 수정
-		cont.put("/boardCreateForm", new BoardCommandCreateForm());
+		cont.put("/boardCreateForm.do", new BoardCommandCreateForm());
 		// 삭제
 		// 상세조회
 		// 목록
-		cont.put("/boardList", new BoardCommandSelectList());
+		cont.put("/boardList.do", new BoardCommandSelectList());
 		// 수정 폼
 		// 등록 폼
 
+		// AJAX
+		cont.put("/ajaxBoardList.do", new AjaxBoardList());
+		cont.put("/ajaxBoardOne.do", new AjaxBoardOne());
 	}
 
 	/**
@@ -73,9 +78,20 @@ public class NewFrontController extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		if (commandImpl != null) {
 			page = commandImpl.excute(request, response);// 실행
-			request.getRequestDispatcher(page).forward(request, response);
-		} else {
-			response.getWriter().append("잘못된 요청");
+			if (page != null && !page.isEmpty()) {
+				if (page.startsWith("redirect:")) {
+					String view = page.substring(9);
+					response.sendRedirect(view);
+				} else if (page.startsWith("ajax:")) {
+					response.getWriter().append(page.substring(5));
+				} else if (page.startsWith("script:")) {
+					response.getWriter().append("<script>").append(page.substring(7)).append("</script>");
+				} else {
+					request.getRequestDispatcher(page).forward(request, response);
+				}
+			} else {
+				response.getWriter().append("잘못된 요청");
+			}
 		}
 	}
 }

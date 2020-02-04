@@ -68,7 +68,7 @@ public class BoardDAO extends DAO {
 			rs = psmt.executeQuery();
 			if(rs.next()) {
 				dto.setNo(rs.getInt("no"));
-				dto.setLastpost(rs.getDate("Lastpost"));
+	//			dto.setLastpost(rs.getDate("Lastpost"));
 				dto.setContents(rs.getString("Contents"));
 				dto.setPoster(rs.getString("Poster"));
 				dto.setViews(rs.getInt("Views"));
@@ -95,7 +95,7 @@ public class BoardDAO extends DAO {
 			while (rs.next()) {
 				BoardDTO dto = new BoardDTO();
 				dto.setNo(rs.getInt("no"));
-				dto.setLastpost(rs.getDate("Lastpost"));
+	//			dto.setLastpost(rs.getDate("Lastpost"));
 				dto.setContents(rs.getString("Contents"));
 				dto.setPoster(rs.getString("Poster"));
 				dto.setViews(rs.getInt("Views"));

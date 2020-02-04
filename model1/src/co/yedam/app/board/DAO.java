@@ -15,7 +15,7 @@ public class DAO {
 	DataSource ds; //컨넥션 POOL 사용을 위한 데이터연결 생성 객체
 	
 	private String driver = "oracle.jdbc.driver.OracleDriver";
-	private String url = "jdbc:oracle:thin:@192.168.111.132:1521:ORCL";
+	private String url = "jdbc:oracle:thin:@192.168.111.132:1521:orcl";
 	private String user = "hr";
 	private String password = "hr";//context.xml에서 작성함
 
