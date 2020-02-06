@@ -4,4 +4,8 @@
         <pattern>*.do</pattern>
         <!-- 주소이름을 설정하는것으로 권한구분가능 ex) "admin/*.do" 혹은 "user/*.do" -->
     </decorator>
+    <excludes>
+    	<pattern>/ajax/*</pattern>
+    	<pattern>/popup/*</pattern>
+    </excludes>
 </decorators>

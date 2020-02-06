@@ -14,8 +14,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.app.board.BoardCommandCreateForm;
 import co.yedam.app.board.BoardCommandSelectList;
+import co.yedam.app.board.FileUpload;
 import co.yedam.app.boardAjax.AjaxBoardList;
 import co.yedam.app.boardAjax.AjaxBoardOne;
+import co.yedam.app.users.command.DeleteUsers;
+import co.yedam.app.users.command.GetUsers;
+import co.yedam.app.users.command.GetUsersList;
+import co.yedam.app.users.command.InsertUsers;
+import co.yedam.app.users.command.ManageUsers;
+import co.yedam.app.users.command.UpdateUsers;
 
 /**
  * Servlet implementation class NewFrontController
@@ -54,6 +61,18 @@ public class NewFrontController extends HttpServlet {
 		// AJAX
 		cont.put("/ajaxBoardList.do", new AjaxBoardList());
 		cont.put("/ajaxBoardOne.do", new AjaxBoardOne());
+		
+		//사용자관리
+		cont.put("/ajax/DeleteUsers.do", new DeleteUsers());
+		cont.put("/ajax/GetUsers.do", new GetUsers());
+		cont.put("/ajax/GetUsersList.do", new GetUsersList());
+		cont.put("/ajax/InsertUsers.do", new InsertUsers());
+		cont.put("/ManageUsers.do", new ManageUsers());
+		cont.put("/ajax/UpdateUsers.do", new UpdateUsers());
+		
+		//파일업로드
+		cont.put("/FileUpload.do", new FileUpload());
+		
 	}
 
 	/**
