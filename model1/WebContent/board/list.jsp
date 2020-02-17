@@ -1,6 +1,6 @@
 <%@page import="co.yedam.app.board.BoardDTO"%>
 <%@page import="java.util.List"%>
-<%@page import="co.yedam.app.board.BoardDAO"%>
+<%@page import="co.yedam.app.board.service.impl.BoardDAO"%>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.sql.*"  %>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags" %>
